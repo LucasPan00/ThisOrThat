@@ -1,0 +1,7 @@
+Game
+Movie
+Music
+Food
+Travel
+Time
+Technology
