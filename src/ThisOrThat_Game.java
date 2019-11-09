@@ -20,9 +20,8 @@ public class ThisOrThat_Game extends javax.swing.JFrame {
     ArrayList<String> question = new ArrayList<String>();
     int desired;
     int actual;
-    int player1,player2;
+    int player1, player2;
     int turn;
-    int score;
 
     public ThisOrThat_Game() {
         initComponents();
@@ -39,7 +38,6 @@ public class ThisOrThat_Game extends javax.swing.JFrame {
     private void initComponents() {
 
         jButton1 = new javax.swing.JButton();
-        questionField = new javax.swing.JTextField();
         player1Score = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
@@ -58,6 +56,7 @@ public class ThisOrThat_Game extends javax.swing.JFrame {
         correct = new javax.swing.JTextField();
         jLabel7 = new javax.swing.JLabel();
         player2Score = new javax.swing.JTextField();
+        questionField = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -65,14 +64,6 @@ public class ThisOrThat_Game extends javax.swing.JFrame {
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
-            }
-        });
-
-        questionField.setEditable(false);
-        questionField.setAutoscrolls(false);
-        questionField.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                questionFieldActionPerformed(evt);
             }
         });
 
@@ -99,7 +90,7 @@ public class ThisOrThat_Game extends javax.swing.JFrame {
             }
         });
 
-        jLabel2.setText("PLayer1");
+        jLabel2.setText("Correct");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -129,7 +120,7 @@ public class ThisOrThat_Game extends javax.swing.JFrame {
                 .addGap(26, 26, 26))
         );
 
-        jLabel3.setText("Player2");
+        jLabel3.setText("Answer");
 
         player2A.setText("A");
         player2A.addActionListener(new java.awt.event.ActionListener() {
@@ -214,15 +205,6 @@ public class ThisOrThat_Game extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(73, 73, 73)
-                        .addComponent(jLabel4))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(145, 145, 145)
-                        .addComponent(questionField, javax.swing.GroupLayout.PREFERRED_SIZE, 509, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(80, Short.MAX_VALUE))
-            .addGroup(layout.createSequentialGroup()
                 .addGap(17, 17, 17)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
@@ -245,17 +227,26 @@ public class ThisOrThat_Game extends javax.swing.JFrame {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(layout.createSequentialGroup()
+                                        .addComponent(Actual, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(guess, javax.swing.GroupLayout.PREFERRED_SIZE, 205, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(layout.createSequentialGroup()
                                         .addComponent(player1Score, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(260, 260, 260)
+                                        .addGap(210, 210, 210)
                                         .addComponent(jLabel5)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                         .addComponent(jButton1)
-                                        .addGap(11, 11, 11))
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addComponent(Actual, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addComponent(guess, javax.swing.GroupLayout.PREFERRED_SIZE, 205, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                                        .addGap(11, 11, 11)))))
                         .addGap(36, 36, 36))))
+            .addGroup(layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(73, 73, 73)
+                        .addComponent(jLabel4))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(138, 138, 138)
+                        .addComponent(questionField, javax.swing.GroupLayout.PREFERRED_SIZE, 568, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(152, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -271,11 +262,11 @@ public class ThisOrThat_Game extends javax.swing.JFrame {
                     .addComponent(jLabel6)
                     .addComponent(jLabel7)
                     .addComponent(player2Score, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(21, 21, 21)
-                .addComponent(questionField, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(37, 37, 37)
+                .addGap(18, 18, 18)
+                .addComponent(questionField, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabel4)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 30, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 37, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(guess, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(Actual, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -305,15 +296,12 @@ public class ThisOrThat_Game extends javax.swing.JFrame {
             }
         } catch (Exception e) {
         }
-        int line = (int) Math.floor((question.size() * Math.random()));
-        questionField.setText(question.get(line));
-        question.remove(line);
-        Actual.setText("What's your answer?");
+        turn = 0;
+        player1 = 0;
+        player2 = 0;
+        newQuestion();
+ 
     }//GEN-LAST:event_jButton1ActionPerformed
-
-    private void questionFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_questionFieldActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_questionFieldActionPerformed
 
     private void player1ScoreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_player1ScoreActionPerformed
         // TODO add your handling code here:
@@ -321,12 +309,17 @@ public class ThisOrThat_Game extends javax.swing.JFrame {
 
     private void player2AActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_player2AActionPerformed
         if (desired == 1) {
-            score++;
+            if (turn % 2 == 0) {
+                player2++;
+                player2Score.setText(player2 + "");
+            } else {
+                player1++;
+                player1Score.setText(player1 + "");
+            }
             correct.setText("It's correct!");
-        }else{
+        } else {
             correct.setText("OPPS! Not correct!");
         }
-        player1Score.setText(score + "");
         desired = 0;
         newQuestion();
         Actual.setText("What's your answer?");
@@ -347,12 +340,17 @@ public class ThisOrThat_Game extends javax.swing.JFrame {
 
     private void player2BActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_player2BActionPerformed
         if (desired == 2) {
-            score++;
+            if (turn % 2 == 0) {
+                player2++;
+                player2Score.setText(player2 + "");
+            } else {
+                player1++;
+                player1Score.setText(player1 + "");
+            }
             correct.setText("It's correct!");
-        }else{
+        } else {
             correct.setText("OPPS! Not correct!");
         }
-        player1Score.setText(score + "");
         desired = 0;
         newQuestion();
         Actual.setText("What's your answer?");
@@ -376,10 +374,18 @@ public class ThisOrThat_Game extends javax.swing.JFrame {
     }//GEN-LAST:event_player2ScoreActionPerformed
 
     private void newQuestion() {
+        turn++;
         if (question.size() != 0) {
+            String whoAsking = "";
+            if (turn % 2 == 0) {
+                whoAsking = "Player2 is guessing Player1";
+            } else {
+                whoAsking = "Player1 is guessing Player2";
+            }
             int line = (int) Math.floor((question.size() * Math.random()));
-            questionField.setText(question.get(line));
+            questionField.setText(whoAsking + "   " + question.get(line));
             question.remove(line);
+
         } else {
             questionField.setText("Out Of Questions!");
         }

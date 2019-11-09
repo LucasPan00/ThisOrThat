@@ -107,15 +107,16 @@ public class Menu extends javax.swing.JFrame {
     }//GEN-LAST:event_option1ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        f= new File("Menu.txt");
+        f = new File("Menu.txt");
         try {
             sc = new Scanner(f);
+            while (sc.hasNextLine()) {
+                menu.add(sc.nextLine());
+            }
         } catch (FileNotFoundException ex) {
             Logger.getLogger(Menu.class.getName()).log(Level.SEVERE, null, ex);
         }
-        while(sc.hasNextLine()){
-            menu.add(sc.nextLine());
-        }
+
         int line = (int) Math.floor((menu.size() * Math.random()));
         option1.setText(menu.get(line));
         menu.remove(line);
